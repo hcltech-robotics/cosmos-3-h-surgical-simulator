@@ -1,0 +1,85 @@
+[runtime]
+name = "cosmos3-h-surgical-simulator"
+profile = "cosmos3-super-webrtc"
+host = "127.0.0.1"
+port = 8080
+width = 512
+height = 288
+fps = 30
+min_inference_fps = 1
+action_chunk_steps = 12
+num_steps = 16
+guidance = 3.0
+shift = 5.0
+seed = 3407
+num_gpus = 8
+master_port = 29517
+torchrun = "torchrun"
+compile = false
+cuda_graphs = false
+anchor_blend = 0.3
+hf_repo_id = "hcltech-robotics/cosmos3-h-surgical-simulator-alpha"
+hf_revision = "main"
+image_size = 256
+domain_name = "open_h_surgical_sim"
+config_file = "cosmos3_h_surgical_simulator/experiment.py"
+experiment = "cosmos3_super_openh_surgical_lora"
+model_mode = "forward_dynamics"
+view_point = "ego_view"
+use_ema_weights = false
+guardrails = false
+prompt = "Endoscopic robotic surgery with dual robotic instruments manipulating tissue."
+turn_server = ""
+turn_username = ""
+turn_credential = ""
+browser_turn_port = 3478
+browser_ice_transport_policy = "all"
+
+[keyboard]
+repeat_hz = 30
+translation_step_m = 0.0025
+rotation_step_rad = 0.03
+gripper_step = 0.04
+max_translation_m = 0.12
+max_rotation_rad = 0.8
+max_gripper = 1.0
+fine_scale = 0.25
+boost_scale = 2.0
+fine_key = "ShiftLeft"
+boost_key = "ShiftRight"
+hold_key = "Space"
+recenter_key = "Enter"
+left_clutch_key = "Digit1"
+right_clutch_key = "Digit2"
+
+[keyboard.bindings.left]
+KeyA = "dx:-1"
+KeyD = "dx:1"
+KeyW = "dy:1"
+KeyS = "dy:-1"
+KeyR = "dz:1"
+KeyF = "dz:-1"
+KeyQ = "droll:-1"
+KeyE = "droll:1"
+KeyT = "dpitch:1"
+KeyG = "dpitch:-1"
+KeyZ = "dyaw:-1"
+KeyC = "dyaw:1"
+KeyV = "gripper:-1"
+KeyB = "gripper:1"
+
+[keyboard.bindings.right]
+ArrowLeft = "dx:-1"
+ArrowRight = "dx:1"
+ArrowUp = "dy:1"
+ArrowDown = "dy:-1"
+PageUp = "dz:1"
+PageDown = "dz:-1"
+KeyY = "droll:-1"
+KeyH = "droll:1"
+KeyU = "dpitch:1"
+KeyJ = "dpitch:-1"
+KeyN = "dyaw:-1"
+KeyM = "dyaw:1"
+Comma = "gripper:-1"
+Period = "gripper:1"

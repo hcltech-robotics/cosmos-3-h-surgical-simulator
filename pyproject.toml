@@ -1,0 +1,57 @@
+[build-system]
+requires = ["hatchling>=1.25"]
+build-backend = "hatchling.build"
+
+[project]
+name = "flashdreams-cosmos3-h-surgical-simulator"
+version = "1.0.0"
+description = "FlashDreams WebRTC inference runtime for the Cosmos 3 H Surgical Simulator endpoint."
+readme = "README.md"
+requires-python = ">=3.10"
+license = "Apache-2.0"
+dependencies = [
+  "aiohttp>=3.9",
+  "aiortc>=1.9",
+  "av>=12",
+  "huggingface-hub>=0.32",
+  "numpy>=1.26",
+  "pillow>=10",
+  "tomli>=2.0; python_version < '3.11'",
+  "pyyaml>=6.0",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8",
+  "ruff>=0.11",
+]
+inference = [
+  "imageio>=2.37",
+  "imageio-ffmpeg>=0.6",
+  "loguru>=0.7",
+  "mediapy>=1.2",
+  "nvidia-ml-py>=13",
+  "omegaconf>=2.3",
+  "opencv-python-headless>=4.12",
+  "torch>=2.6",
+  "torchvision>=0.21",
+  "tyro>=0.9",
+]
+
+[project.scripts]
+cosmos3-h-surgical-run = "flashdreams_cosmos3_h_surgical.cli:main"
+cosmos3-h-surgical-webrtc = "flashdreams_cosmos3_h_surgical.server:main"
+
+[project.entry-points."flashdreams.runner_configs"]
+"cosmos3-h-surgical-simulator" = "flashdreams_cosmos3_h_surgical.config:RUNNER_COSMOS3_H_SURGICAL_SIMULATOR"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/flashdreams_cosmos3_h_surgical"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
