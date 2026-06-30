@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta name="title" content="Cosmos3-H-Surgical-Simulator-alpha">
+  <meta name="description" content="An action-conditioned surgical world model for laparoscopic robotic surgery simulation.">
+  <meta name="keywords" content="surgical simulation, laparoscopic surgery, world model, action model, Cosmos 3, FlashDreams, robotics">
+  <meta name="author" content="Chris von Csefalvay">
+  <meta name="robots" content="index, follow">
+  <meta name="language" content="English">
+
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="HCLTech">
+  <meta property="og:title" content="Cosmos3-H-Surgical-Simulator-alpha">
+  <meta property="og:description" content="The first World Action Model of laparoscopic surgery.">
+  <meta property="og:url" content="https://huggingface.co/hcltech-robotics/cosmos3-h-surgical-simulator-alpha">
+  <meta property="og:image" content="assets/source-split-early-inverse.jpg">
+  <meta property="og:image:alt" content="Cosmos3-H-Surgical-Simulator-alpha comparison frame">
+  <meta property="article:author" content="Chris von Csefalvay">
+  <meta property="article:section" content="Research">
+  <meta property="article:tag" content="surgical robotics">
+  <meta property="article:tag" content="world models">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Cosmos3-H-Surgical-Simulator-alpha">
+  <meta name="twitter:description" content="The first World Action Model of laparoscopic surgery.">
+  <meta name="twitter:image" content="assets/source-split-early-inverse.jpg">
+  <meta name="twitter:image:alt" content="Cosmos3-H-Surgical-Simulator-alpha comparison frame">
+
+  <meta name="citation_title" content="Cosmos3-H-Surgical-Simulator-alpha">
+  <meta name="citation_author" content="von Csefalvay, Chris">
+  <meta name="citation_publication_date" content="2026">
+
+  <meta name="theme-color" content="#111111">
+  <meta name="msapplication-TileColor" content="#111111">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+
+  <title>Cosmos3-H-Surgical-Simulator-alpha | HCLTech</title>
+
+  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+  <link rel="apple-touch-icon" href="static/images/favicon.ico">
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+  <link rel="stylesheet" href="static/css/project.css">
+  <link rel="preload" href="static/css/bulma-carousel.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+
+  <noscript>
+    <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  </noscript>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <script defer src="static/js/jquery.min.js"></script>
+  <script defer src="static/js/bulma-carousel.min.js"></script>
+  <script defer src="static/js/index.js"></script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ScholarlyArticle",
+    "headline": "Cosmos3-H-Surgical-Simulator-alpha",
+    "description": "An action-conditioned surgical world model for laparoscopic robotic surgery simulation.",
+    "author": [
+      {
+        "@type": "Person",
+        "name": "Chris von Csefalvay",
+        "affiliation": {
+          "@type": "Organization",
+          "name": "HCLTech"
+        }
+      }
+    ],
+    "datePublished": "2026-06-18",
+    "url": "https://huggingface.co/hcltech-robotics/cosmos3-h-surgical-simulator-alpha",
+    "image": "assets/source-split-early-inverse.jpg",
+    "keywords": ["surgical simulation", "laparoscopic surgery", "world models", "robotics", "Cosmos 3"],
+    "abstract": "Cosmos3-H-Surgical-Simulator-alpha predicts short-horizon laparoscopic video from an initial endoscopic frame and an explicit robot action chunk.",
+    "isAccessibleForFree": true,
+    "about": [
+      {"@type": "Thing", "name": "Surgical robotics"},
+      {"@type": "Thing", "name": "World models"}
+    ]
+  }
+  </script>
+</head>
+<body>
+  <main id="main-content">
+    <section class="hero publication-header">
+      <div class="hero-body">
+        <div class="container is-max-desktop">
+          <div class="columns is-centered">
+            <div class="column has-text-centered">
+              <p class="project-eyebrow">The first World Action Model of laparoscopic surgery</p>
+              <h1 class="title is-1 publication-title">Cosmos3-H-Surgical-Simulator-alpha</h1>
+              <div class="is-size-5 publication-authors">
+                <span class="author-block">Chris von Csefalvay<sup>1</sup></span>
+              </div>
+              <div class="project-author-website">
+                <a href="https://chrisvoncsefalvay.com" target="_blank">chrisvoncsefalvay.com</a>
+              </div>
+              <div class="is-size-5 publication-authors">
+                <span class="author-block affiliation-block"><sup>1</sup> HCLTech</span>
+              </div>
+              <div class="column has-text-centered">
+                <div class="publication-links">
+                  <span class="link-block">
+                    <a href="https://huggingface.co/hcltech-robotics/cosmos3-h-surgical-simulator-alpha" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                      <span>Model</span>
+                    </a>
+                  </span>
+                  <span class="link-block">
+                    <a href="https://github.com/hcltech-robotics/cosmos-3-h-surgical-simulator" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                      <span>Code</span>
+                    </a>
+                  </span>
+                  <span class="link-block">
+                    <a href="" class="external-link button is-normal is-rounded is-dark">
+                      <span>arXiv (coming soon)</span>
+                    </a>
+                  </span>
+                  <span class="link-block">
+                    <a href="#references" class="external-link button is-normal is-rounded is-dark">
+                      <span>References</span>
+                    </a>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="hero teaser">
+      <div class="container is-max-desktop">
+        <div class="hero-body">
+          <video id="teaser" controls playsinline preload="metadata" poster="assets/source-split-early-inverse.jpg">
+            <source src="video.mp4" type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered teaser-caption">
+            Given an endoscopic frame and a robot action sequence, the model predicts the next
+            laparoscopic scene as a physically grounded video rollout.
+          </h2>
+        </div>
+      </div>
+    </section>
+
+    <section class="section hero is-light">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-four-fifths">
+            <h2 class="title is-3">Abstract</h2>
+            <div class="content has-text-justified">
+              <p>
+                Surgical simulation is a central tool for laparoscopic training and robotics
+                research because it lets a system observe the consequences of instrument motion
+                without acting on a patient. Cosmos3-H-Surgical-Simulator-alpha models this
+                setting directly: it conditions on an initial endoscopic frame and a 12-step
+                robot action trajectory, then predicts the corresponding short-horizon
+                laparoscopic video. The model is post-trained from NVIDIA Cosmos 3 Super on
+                Open-H-Embodiment surgical robotics video-kinematics data using 8x GB200 GPUs,
+                and is served through FlashDreams for interactive and batch inference.
+                The Cosmos-3-H-Surgical-Simulator represents the first real time
+                capable World Action Model for surgical action dynamics, validating
+                the potential of WAMs to serve both as a training tool for surgical
+                reinforcement learning (RL) environments for embodied agents in RAS
+                and as realistic visualisers of their action-conditioned results.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column is-four-fifths">
+            <h2 class="title is-3">Method</h2>
+            <div class="content">
+              <p>
+                The model treats surgical simulation as conditional world modelling:
+                given the present visual state and a candidate action sequence, it
+                predicts the resulting short-horizon visual state of the surgical
+                scene. In this setting, a World Action Model is a forward dynamics
+                model over observations and actions, not a robot policy. The model
+                does not choose the next surgical motion; it visualises the likely
+                consequences of a motion supplied by a surgeon, policy, simulator, or
+                controller.
+              </p>
+              <p>
+                The base model is <code>nvidia/Cosmos3-Super</code>, NVIDIA's
+                64B-parameter Cosmos 3 Super model. Cosmos 3 is an omnimodal world
+                foundation model for physical AI that accepts and generates
+                combinations of text, image, video, audio, and action trajectories. Its
+                Mixture-of-Transformers architecture separates an autoregressive
+                reasoner tower, which interprets multimodal context, from a diffusion
+                generator tower, which produces continuous modalities such as future
+                video and action-conditioned rollouts.
+              </p>
+              <p>
+                Cosmos3-H-Surgical-Simulator-alpha adapts this general physical-AI
+                backbone to laparoscopic robotic surgery by post-training it on
+                Open-H-Embodiment surgical video paired with robot kinematics. The
+                input is an RGB endoscopic frame, task metadata, and an explicit
+                action tensor <code>action[12, 44]</code>. Each action row encodes
+                dual-tool relative motion: left tool translation, left 6D rotation,
+                left jaw target, right tool translation, right 6D rotation, right jaw
+                target, and reserved bridge channels. The output is a 13-frame video
+                segment representing the scene after the action chunk.
+              </p>
+              <p>
+                The FlashDreams adapter prepares the first frame, writes validated JSON and NumPy
+                action files, constructs the Cosmos 3 input manifest, resolves the Hugging Face
+                checkpoint, and launches the <code>cosmos3_super_openh_surgical_lora</code>
+                experiment with regular weights and EMA disabled.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section hero is-light">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column is-four-fifths">
+            <h2 class="title is-3">Training data and compute</h2>
+            <div class="content">
+              <p>
+                Training uses Open-H-Embodiment, a healthcare robotics dataset of paired
+                kinematics and video spanning surgical robotics, ultrasound, clinical procedure,
+                tabletop, and simulated healthcare robotics tasks. The model is trained as a
+                surgical forward-dynamics model from video and kinematic action trajectories.
+              </p>
+              <table class="table is-fullwidth is-bordered project-table">
+                <tbody>
+                  <tr><th>Base model</th><td><code>nvidia/Cosmos3-Super</code></td></tr>
+                  <tr><th>Dataset</th><td><code>nvidia/PhysicalAI-Robotics-Open-H-Embodiment</code></td></tr>
+                  <tr><th>Training hardware</th><td>8x GB200 GPUs</td></tr>
+                  <tr><th>Checkpoint</th><td><code>checkpoints/iter_000000060</code></td></tr>
+                  <tr><th>Frame staging</th><td>512 x 288 RGB, Cosmos image size 256</td></tr>
+                  <tr><th>Sampling</th><td>16 steps, guidance 3.0, shift 5.0</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="hero is-small">
+      <div class="hero-body">
+        <div class="container">
+          <h2 class="title is-3 has-text-centered">Qualitative comparisons</h2>
+          <div id="results-carousel" class="carousel results-carousel">
+            <div class="item">
+              <img src="assets/source-split-early-inverse.jpg" alt="Source split comparison between Cosmos 3 and the surgical simulator" loading="lazy">
+              <h2 class="subtitle has-text-centered">
+                Source split: base Cosmos 3 on the left, Cosmos3-H-Surgical-Simulator-alpha on the right.
+              </h2>
+            </div>
+            <div class="item">
+              <img src="assets/comparison-visual-fidelity.jpg" alt="Visual fidelity comparison" loading="lazy">
+              <h2 class="subtitle has-text-centered">
+                Visual fidelity: the surgical model preserves endoscopic lighting, tissue colour, and instrument material.
+              </h2>
+            </div>
+            <div class="item">
+              <img src="assets/comparison-motion.jpg" alt="Motion comparison" loading="lazy">
+              <h2 class="subtitle has-text-centered">
+                Motion: generated tool displacement follows the conditioned action trajectory.
+              </h2>
+            </div>
+            <div class="item">
+              <img src="assets/comparison-physics.jpg" alt="Physics comparison" loading="lazy">
+              <h2 class="subtitle has-text-centered">
+                Contact: local tissue appearance remains coherent around the instrument path.
+              </h2>
+            </div>
+            <div class="item">
+              <img src="assets/comparison-hallucinations.jpg" alt="Structured scene comparison" loading="lazy">
+              <h2 class="subtitle has-text-centered">
+                Scene consistency: structured objects remain tied to the camera and action context.
+              </h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section hero is-light" id="runtime">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column is-four-fifths">
+            <h2 class="title is-3">FlashDreams inference</h2>
+            <div class="content">
+              <p>
+                The repository registers a FlashDreams runner and two direct entry points:
+                <code>cosmos3-h-surgical-run</code> for batch inference and
+                <code>cosmos3-h-surgical-webrtc</code> for browser-controlled serving.
+                JSON action files are validated and preconverted to NumPy before inference.
+              </p>
+              <pre><code>python3 -m pip install -e ".[inference]"
+export COSMOS3_ROOT=/opt/cosmos/packages/cosmos3
+export WAN_VAE_PATH=/opt/cosmos/checkpoints/wan22_vae/Wan2.2_VAE.pth
+export HF_TOKEN=&lt;token&gt;
+
+cosmos3-h-surgical-run \
+  --config configs/cosmos3-super-webrtc.toml \
+  --cosmos3-root "$COSMOS3_ROOT" \
+  --project-root "$PWD" \
+  --image-path runs/input/first_frame.png \
+  --actions-path runs/input/actions.json \
+  --preconvert-actions-to runs/input/actions.npy \
+  --output-root runs/cosmos3-h-surgical</code></pre>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="references">
+      <div class="container is-max-desktop content">
+        <h2 class="title is-3">References</h2>
+        <ol class="references-list">
+          <li>
+            NVIDIA. <a href="https://www.nvidia.com/en-us/ai/cosmos/" target="_blank">NVIDIA Cosmos</a>.
+          </li>
+          <li>
+            NVIDIA. <a href="https://huggingface.co/nvidia/Cosmos3-Super" target="_blank">nvidia/Cosmos3-Super</a>.
+          </li>
+          <li>
+            NVIDIA. <a href="https://huggingface.co/datasets/nvidia/PhysicalAI-Robotics-Open-H-Embodiment" target="_blank">PhysicalAI-Robotics-Open-H-Embodiment</a>.
+          </li>
+          <li>
+            NVIDIA. <a href="https://github.com/NVIDIA/flashdreams" target="_blank">FlashDreams: high-performance inference and serving for interactive autoregressive video and world models</a>.
+          </li>
+          <li>
+            Seymour et al. <a href="https://pubmed.ncbi.nlm.nih.gov/12368674/" target="_blank">Virtual reality training improves operating room performance</a>.
+          </li>
+          <li>
+            Grantcharov et al. <a href="https://pubmed.ncbi.nlm.nih.gov/11727074/" target="_blank">Virtual reality training leads to faster adaptation to the fulcrum effect in laparoscopic surgery</a>.
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section hero is-light" id="bibtex">
+      <div class="container is-max-desktop content">
+        <h2 class="title is-3">BibTeX</h2>
+        <pre><code>@misc{voncsefalvay2026cosmos3hsurgicalsimulatoralpha,
+  title        = {Cosmos-3-H-Surgical-Simulator-alpha: An Action-Conditioned Cosmos 3 Super Fine-Tune for Surgical Robotics World Modeling},
+  author       = {von Csefalvay, Chris},
+  year         = {2026},
+  howpublished = {\url{https://huggingface.co/hcltech-robotics/cosmos3-h-surgical-simulator-alpha}},
+  doi          = {10.57967/hf/9372},
+  note         = {Pre-release action-conditioned fine-tune of nvidia/Cosmos3-Super on Open-H-Embodiment}
+}
+
+@misc{nvidia2026cosmos3,
+  title         = {Cosmos 3: Omnimodal World Models for Physical AI},
+  author        = {{NVIDIA} and Aditi and Niket Agarwal and others},
+  year          = {2026},
+  eprint        = {2606.02800},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.CV},
+  doi           = {10.48550/arXiv.2606.02800},
+  url           = {https://arxiv.org/abs/2606.02800}
+}
+
+@misc{openh2026embodiment,
+  title         = {Open-H-Embodiment: A Large-Scale Dataset for Enabling Foundation Models in Medical Robotics},
+  author        = {{Open-H-Embodiment Consortium}},
+  year          = {2026},
+  eprint        = {2604.21017},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.RO},
+  url           = {https://arxiv.org/abs/2604.21017}
+}</code></pre>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content has-text-centered">
+            <p>
+              Built with the
+              <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a>,
+              adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

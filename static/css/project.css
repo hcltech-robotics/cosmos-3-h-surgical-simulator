@@ -1,0 +1,132 @@
+:root {
+  --primary-color: #1b4d89;
+  --primary-hover: #12365f;
+  --accent-color: #0f766e;
+  --text-primary: #1b1f24;
+  --text-secondary: #4b5563;
+  --background-secondary: #f7f8fa;
+  --background-accent: #eef2f5;
+  --border-color: #d9dee5;
+  --gradient-primary: none;
+  --gradient-accent: none;
+  --gradient-subtle: none;
+}
+
+body {
+  background: #ffffff;
+}
+
+.publication-header .hero-body {
+  padding-top: 4.5rem;
+  padding-bottom: 2.5rem;
+}
+
+.project-eyebrow {
+  margin-bottom: 1rem;
+  color: #0f766e;
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+.publication-title {
+  max-width: 980px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: clamp(2.4rem, 6vw, 4.6rem) !important;
+}
+
+.publication-links {
+  margin-top: 1rem;
+}
+
+.project-author-website {
+  margin-top: -0.75rem;
+  margin-bottom: 0.75rem;
+  font-size: 0.98rem;
+  font-weight: 400;
+}
+
+.project-author-website a {
+  font-weight: 400;
+}
+
+.affiliation-block {
+  font-weight: 400;
+}
+
+.button.is-dark {
+  background: #1b1f24 !important;
+  box-shadow: none;
+}
+
+.button.is-dark:hover {
+  transform: none;
+  background: #1b4d89 !important;
+}
+
+.teaser video {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 16px 40px rgba(15, 23, 42, 0.18);
+  background: #000;
+}
+
+.teaser-caption {
+  max-width: 820px;
+  margin: 1.25rem auto 0;
+}
+
+.content p {
+  font-size: 1.06rem;
+}
+
+.project-table th {
+  width: 32%;
+  color: #1b1f24;
+}
+
+.results-carousel .item {
+  padding: 0 0.75rem 1rem;
+}
+
+.results-carousel img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 1px solid var(--border-color);
+  box-shadow: none;
+}
+
+.results-carousel .subtitle {
+  max-width: 880px;
+  margin: 1rem auto 0;
+  color: var(--text-secondary);
+  font-size: 1rem;
+}
+
+pre {
+  white-space: pre-wrap;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+}
+
+.references-list li {
+  margin-bottom: 0.65rem;
+}
+
+.footer {
+  padding: 2rem 1.5rem;
+}
+
+@media screen and (max-width: 768px) {
+  .publication-header .hero-body {
+    padding-top: 3rem;
+  }
+
+  .project-table th,
+  .project-table td {
+    display: block;
+    width: 100%;
+  }
+}
