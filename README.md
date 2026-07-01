@@ -1,4 +1,4 @@
-# Cosmos 3 H Surgical Simulator for FlashDreams
+# Cosmos-3 action conditioned for surgical applications
 
 FlashDreams runner and WebRTC serving adapter for
 [`hcltech-robotics/cosmos-3-ac-surgical-alpha`](https://huggingface.co/hcltech-robotics/cosmos-3-ac-surgical-alpha),
