@@ -13,7 +13,7 @@ except ModuleNotFoundError:  # Python 3.10
 
 @dataclass(frozen=True)
 class RuntimeConfig:
-    name: str = "cosmos3-h-surgical-simulator"
+    name: str = "cosmos-3-ac-surgical"
     profile: str = "cosmos3-super-webrtc"
     host: str = "127.0.0.1"
     port: int = 8080
@@ -32,7 +32,7 @@ class RuntimeConfig:
     compile: bool = False
     cuda_graphs: bool = False
     anchor_blend: float = 0.0
-    hf_repo_id: str = "hcltech-robotics/cosmos3-h-surgical-simulator-alpha"
+    hf_repo_id: str = "hcltech-robotics/cosmos-3-ac-surgical-alpha"
     hf_revision: str = "main"
     image_size: int = 256
     domain_name: str = "open_h_surgical_sim"

@@ -1,7 +1,7 @@
 # Cosmos 3 H Surgical Simulator for FlashDreams
 
 FlashDreams runner and WebRTC serving adapter for
-[`hcltech-robotics/cosmos3-h-surgical-simulator-alpha`](https://huggingface.co/hcltech-robotics/cosmos3-h-surgical-simulator-alpha),
+[`hcltech-robotics/cosmos-3-ac-surgical-alpha`](https://huggingface.co/hcltech-robotics/cosmos-3-ac-surgical-alpha),
 an action-conditioned LoRA checkpoint on `nvidia/Cosmos3-Super`.
 
 This package provides the runtime layer around the Cosmos 3 Super checkpoint:
@@ -10,9 +10,9 @@ resolution, Cosmos 3 sample construction, and WebRTC video delivery.
 
 ## Runtime contract
 
-- FlashDreams runner slug: `cosmos3-h-surgical-simulator`
-- Model repo: `hcltech-robotics/cosmos3-h-surgical-simulator-alpha`
-- Source repo: `https://github.com/hcltech-robotics/cosmos-3-h-surgical-simulator`
+- FlashDreams runner slug: `cosmos-3-ac-surgical`
+- Model repo: `hcltech-robotics/cosmos-3-ac-surgical-alpha`
+- Source repo: `https://github.com/hcltech-robotics/cosmos-3-ac-surgical`
 - Base model: `nvidia/Cosmos3-Super`
 - Checkpoint format: PyTorch Distributed Checkpoint under `checkpoints/iter_000000060`
 - Cosmos 3 experiment: `cosmos3_super_openh_surgical_lora`
@@ -61,7 +61,7 @@ export HF_TOKEN=...
 ## WebRTC runtime
 
 ```bash
-cosmos3-h-surgical-webrtc \
+cosmos-3-ac-surgical-webrtc \
   --config configs/cosmos3-super-webrtc.toml \
   --cosmos3-root "$COSMOS3_ROOT" \
   --project-root "$PWD" \
@@ -73,19 +73,19 @@ data channel, the server converts that state into a validated `12 x 44` action
 chunk, and Cosmos 3 generates a 13-frame action-conditioned rollout.
 
 `--checkpoint` is optional. When omitted, the runtime resolves the latest
-checkpoint from `hcltech-robotics/cosmos3-h-surgical-simulator-alpha` through
+checkpoint from `hcltech-robotics/cosmos-3-ac-surgical-alpha` through
 `huggingface_hub.snapshot_download`.
 
 ## Batch runner
 
 ```bash
-cosmos3-h-surgical-run \
+cosmos-3-ac-surgical-run \
   --config configs/cosmos3-super-webrtc.toml \
   --cosmos3-root "$COSMOS3_ROOT" \
   --project-root "$PWD" \
   --image-path runs/local/first_frame.png \
   --actions-path runs/local/actions.json \
-  --output-root runs/cosmos3-h-surgical
+  --output-root runs/cosmos-3-ac-surgical
 ```
 
 The action loader accepts either `.npy` files or a JSON object with an
@@ -113,14 +113,14 @@ The runtime validates the full `12 x 44` shape and writes both `actions.npy` and
 To preconvert a JSON action file before inference:
 
 ```bash
-cosmos3-h-surgical-run \
+cosmos-3-ac-surgical-run \
   --config configs/cosmos3-super-webrtc.toml \
   --cosmos3-root "$COSMOS3_ROOT" \
   --project-root "$PWD" \
   --image-path runs/local/first_frame.png \
   --actions-path runs/local/actions.json \
   --preconvert-actions-to runs/local/actions.npy \
-  --output-root runs/cosmos3-h-surgical
+  --output-root runs/cosmos-3-ac-surgical
 ```
 
 ## Action contract
@@ -146,13 +146,13 @@ The package exposes the standard runner entry point:
 
 ```toml
 [project.entry-points."flashdreams.runner_configs"]
-"cosmos3-h-surgical-simulator" = "flashdreams_cosmos3_h_surgical.config:RUNNER_COSMOS3_H_SURGICAL_SIMULATOR"
+"cosmos-3-ac-surgical" = "flashdreams_cosmos3_h_surgical.config:RUNNER_COSMOS3_H_SURGICAL_SIMULATOR"
 ```
 
 After `pip install -e .`, FlashDreams can discover the runner by slug:
 
 ```bash
-flashdreams-run cosmos3-h-surgical-simulator \
+flashdreams-run cosmos-3-ac-surgical \
   --cosmos3-root "$COSMOS3_ROOT" \
   --image-path runs/local/first_frame.png \
   --actions-path runs/local/actions.npy \
@@ -186,3 +186,12 @@ The CPU tests cover:
 
 A GPU rollout uses the same batch or WebRTC command with a valid Cosmos 3
 checkout, VAE path, Hugging Face token, and the Hub checkpoint.
+
+## License
+
+This project is released under the OpenMDW license.
+
+Cosmos is a trademark of NVIDIA. Cosmos-3-ac-Surgical is inspired by
+NVIDIA's [Cosmos-H-Surgical-Simulator](https://arxiv.org/abs/2511.00062), but
+it is a separate project and is not affiliated with, endorsed by or sponsored
+by NVIDIA or the Cosmos-H-Surgical-Simulator project.

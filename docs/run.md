@@ -2,23 +2,23 @@
 
 ## Overview
 
-`Cosmos3-H-Surgical-Simulator-alpha` is a LoRA fine-tune of `nvidia/Cosmos3-Super`
+`Cosmos-3-ac-Surgical` is a LoRA fine-tune of `nvidia/Cosmos3-Super`
 for action-conditioned surgical robotics video generation. It was trained on
 Open-H-Embodiment surgical robotics trajectories using 8x GB200 GPUs.
 
 The FlashDreams adapter in this repository provides:
 
-- a batch runner: `cosmos3-h-surgical-run`
-- a WebRTC runner: `cosmos3-h-surgical-webrtc`
-- a FlashDreams runner slug: `cosmos3-h-surgical-simulator`
+- a batch runner: `cosmos-3-ac-surgical-run`
+- a WebRTC runner: `cosmos-3-ac-surgical-webrtc`
+- a FlashDreams runner slug: `cosmos-3-ac-surgical`
 - JSON action loading and JSON-to-NumPy preconversion
 - Hugging Face checkpoint resolution for
-  `hcltech-robotics/cosmos3-h-surgical-simulator-alpha`
+  `hcltech-robotics/cosmos-3-ac-surgical-alpha`
 
 ## Runtime contract
 
 - Base model: `nvidia/Cosmos3-Super`
-- LoRA: `Cosmos3-H-Surgical-Simulator-alpha`
+- LoRA: `Cosmos-3-ac-Surgical`
 - Config: `configs/cosmos3-super-webrtc.toml`
 - Cosmos 3 experiment: `cosmos3_super_openh_surgical_lora`
 - Cosmos config file: `cosmos3_h_surgical_simulator/experiment.py`
@@ -63,23 +63,23 @@ PY
 ## Batch inference
 
 ```bash
-cosmos3-h-surgical-run \
+cosmos-3-ac-surgical-run \
   --config configs/cosmos3-super-webrtc.toml \
   --cosmos3-root "$COSMOS3_ROOT" \
   --project-root "$PWD" \
   --image-path runs/input/first_frame.png \
   --actions-path runs/input/actions.json \
   --preconvert-actions-to runs/input/actions.npy \
-  --output-root runs/cosmos3-h-surgical
+  --output-root runs/cosmos-3-ac-surgical
 ```
 
 When `--checkpoint` is not supplied, the runner resolves the checkpoint from
-`hcltech-robotics/cosmos3-h-surgical-simulator-alpha`.
+`hcltech-robotics/cosmos-3-ac-surgical-alpha`.
 
 ## WebRTC serving
 
 ```bash
-cosmos3-h-surgical-webrtc \
+cosmos-3-ac-surgical-webrtc \
   --config configs/cosmos3-super-webrtc.toml \
   --cosmos3-root "$COSMOS3_ROOT" \
   --project-root "$PWD" \

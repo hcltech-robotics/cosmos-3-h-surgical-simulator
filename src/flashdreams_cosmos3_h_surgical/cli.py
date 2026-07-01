@@ -22,7 +22,7 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--preconvert-actions-to", type=Path)
     parser.add_argument("--prompt")
     parser.add_argument("--output-root", type=Path, default=Path("runs/batch"))
-    parser.add_argument("--sample-name", default="cosmos3-h-surgical-simulator")
+    parser.add_argument("--sample-name", default="cosmos-3-ac-surgical")
     return parser
 
 

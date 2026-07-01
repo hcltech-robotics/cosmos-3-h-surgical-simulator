@@ -1,5 +1,5 @@
 [runtime]
-name = "cosmos3-h-surgical-simulator"
+name = "cosmos-3-ac-surgical"
 profile = "cosmos3-super-webrtc"
 host = "127.0.0.1"
 port = 8080
@@ -18,7 +18,7 @@ torchrun = "torchrun"
 compile = false
 cuda_graphs = false
 anchor_blend = 0.3
-hf_repo_id = "hcltech-robotics/cosmos3-h-surgical-simulator-alpha"
+hf_repo_id = "hcltech-robotics/cosmos-3-ac-surgical-alpha"
 hf_revision = "main"
 image_size = 256
 domain_name = "open_h_surgical_sim"
